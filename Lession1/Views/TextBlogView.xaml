@@ -4,6 +4,10 @@
              xmlns:service="clr-namespace:Lession1.Models;assembly=Lession1"
              x:Class="Lession1.Views.TextBlogView">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto "></RowDefinition>
+            <RowDefinition Height="Auto "></RowDefinition>
+        </Grid.RowDefinitions>
         <VerticalStackLayout IsVisible="{Binding State, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static service:BlogState.PreView}}">
             <Label Text="{Binding Title}" FontAttributes="Bold">
             </Label>
@@ -22,5 +26,34 @@
                     AutoSize="TextChanges"
                     Placeholder="内容"></Editor>
         </VerticalStackLayout>
+
+        <Label Grid.Row="1">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState Name="BlogPreView">
+                        <VisualState.StateTriggers>
+                            <StateTrigger
+                                          IsActive="{Binding State, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static service:BlogState.PreView}}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Text"
+                                    Value="当前为发布模式" />
+
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="BlogEdit">
+                        <VisualState.StateTriggers>
+                            <StateTrigger IsActive="{Binding State, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static service:BlogState.Edit}}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Text"
+                                    Value="当前为编辑模式" />
+
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+        </Label>
     </Grid>
 </ContentView>

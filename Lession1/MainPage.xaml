@@ -10,9 +10,11 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems>
-                            <SwipeItem Text="编辑/发布"
-                                       Command="{TemplateBinding BindingContext.SwitchState}"
-                                       IconImageSource="delete.png"
+                            <SwipeItem Text="编辑"
+                                       BackgroundColor="LightYellow" />
+                            <SwipeItem Text="分享"
+                                       BackgroundColor="Azure" />
+                            <SwipeItem Text="删除"
                                        BackgroundColor="Red" />
                         </SwipeItems>
                     </SwipeView.LeftItems>
@@ -21,12 +23,9 @@
                             CornerRadius="5"
                             Padding="8">
                         <VerticalStackLayout>
-
-
-
                             <ContentPresenter />
                             <Label Text="{TemplateBinding BindingContext.PostTime}"
-                                   FontFamily="FontAwesome"></Label>
+                                   ></Label>
                             <Button Text="编辑/发布"
                                     Command="{TemplateBinding BindingContext.SwitchState}" />
                         </VerticalStackLayout>
@@ -42,18 +41,16 @@
                    Padding="8">
                 <FlyoutBase.ContextFlyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem Text="编辑/发布"
-                                        Command="{TemplateBinding BindingContext.SwitchState}" />
+                        <MenuFlyoutItem Text="编辑" />
+                        <MenuFlyoutItem Text="分享" />
+                        <MenuFlyoutItem Text="删除" />
                     </MenuFlyout>
                 </FlyoutBase.ContextFlyout>
 
                 <VerticalStackLayout>
-                    
-                   
-
                     <ContentPresenter  />
                     <Label Text="{TemplateBinding BindingContext.PostTime}"
-                           FontFamily="FontAwesome"></Label>
+                           ></Label>
                     <Button Text="编辑/发布"
                             Command="{TemplateBinding BindingContext.SwitchState}" />
                 </VerticalStackLayout>

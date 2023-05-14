@@ -8,6 +8,10 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         this.BindingContext=new MainPageViewModel();
+    }
+
+    private void StateTrigger_IsActiveChanged(object sender, EventArgs e)
+    {
 
     }
 }

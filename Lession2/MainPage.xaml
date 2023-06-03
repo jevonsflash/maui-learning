@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Lession2.TouchRecognizer;assembly=Lession2"
+             BackgroundColor="{StaticResource PhoneBackgroundBrush}"
+             x:Class="Lession2.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="controls:TouchContentView"
+               x:Key="HoldDownButtonStyle">
+            <Setter Property="HeightRequest"
+                    Value="120"></Setter>
+            <Setter Property="WidthRequest"
+                    Value="120"></Setter>
+            <Setter Property="HorizontalOptions"
+                    Value="Center"></Setter>
+            <Setter Property="VerticalOptions"
+                    Value="Center"></Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <Grid WidthRequest="500"
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+
+            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+                                       BackgroundColor="Blue"
+                                       Grid.Column="0"
+                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+
+
+            </controls:TouchContentView>
+
+
+            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+                                       BackgroundColor="Green"
+                                       Grid.Column="1"
+                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+
+
+            </controls:TouchContentView>
+
+
+            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+                                       BackgroundColor="Yellow"
+                                       Grid.Column="2"
+                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+
+
+            </controls:TouchContentView>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

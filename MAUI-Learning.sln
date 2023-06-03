@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lession1", "Lession1\Lession1.csproj", "{79C3D147-A70E-4CF2-B197-B0EEF856FD22}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lession2", "Lession2\Lession2.csproj", "{7EF5B607-07CD-467A-B190-76ABE62313F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,14 +19,15 @@ Global
 		{79C3D147-A70E-4CF2-B197-B0EEF856FD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79C3D147-A70E-4CF2-B197-B0EEF856FD22}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79C3D147-A70E-4CF2-B197-B0EEF856FD22}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF5B607-07CD-467A-B190-76ABE62313F5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{CCCFD1D7-EC87-4D6B-8FCD-B0E167325D72} = {0C2B7A31-7B39-4CBE-9CDD-9888E570A249}
-		{D8D18218-866A-4B60-BD9E-AB7F2D1A60A2} = {0C2B7A31-7B39-4CBE-9CDD-9888E570A249}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

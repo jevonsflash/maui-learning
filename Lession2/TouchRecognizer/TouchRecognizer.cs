@@ -3,7 +3,7 @@ using Microsoft.Maui.Platform;
 
 namespace Lession2.TouchRecognizer
 {
-    public partial class TouchRecognizer
+    public partial class TouchRecognizer: IDisposable
     {
         public event EventHandler<TouchActionEventArgs> OnTouchActionInvoked;
         public partial void Dispose();

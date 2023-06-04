@@ -1,12 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.Handlers;
-using Microsoft.UI.Xaml.Controls;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Lession2.TouchRecognizer
 {
@@ -42,11 +34,11 @@ namespace Lession2.TouchRecognizer
 #endif
 
 #if IOS|| MACCATALYST
-                    touchRecognizer = new TouchRecognizer(handler.PlatformView as UIKit.UIView);
-                    touchRecognizer.OnTouchActionInvoked += TouchRecognizer_OnTouchActionInvoked;
+                touchRecognizer = new TouchRecognizer(handler.PlatformView as UIKit.UIView);
+                touchRecognizer.OnTouchActionInvoked += TouchRecognizer_OnTouchActionInvoked;
 
-                    (handler.PlatformView as UIKit.UIView).UserInteractionEnabled = true;
-                    (handler.PlatformView as UIKit.UIView).AddGestureRecognizer(touchRecognizer);
+                (handler.PlatformView as UIKit.UIView).UserInteractionEnabled = true;
+                (handler.PlatformView as UIKit.UIView).AddGestureRecognizer(touchRecognizer);
 #endif
             }
 
@@ -82,12 +74,7 @@ namespace Lession2.TouchRecognizer
         private void TouchRecognizer_OnTouchActionInvoked(object sender, TouchActionEventArgs e)
         {
             OnTouchActionInvoked?.Invoke(this, e);
-            Debug.WriteLine(e.Type + " is Invoked, position:" + e.Location);
         }
 
-        private void PanGestureRecognizer_PanUpdated(object sender, PanUpdatedEventArgs e)
-        {
-
-        }
     }
 }

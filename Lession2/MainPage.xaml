@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Lession2.TouchRecognizer;assembly=Lession2"
              BackgroundColor="{StaticResource PhoneBackgroundBrush}"
+             x:Name="MainContentPage"
              x:Class="Lession2.MainPage">
     <ContentPage.Resources>
         <Style TargetType="controls:TouchContentView"
@@ -19,44 +20,57 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Grid WidthRequest="500"
-              HorizontalOptions="Center"
-              VerticalOptions="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            
-
-            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
-                                       BackgroundColor="Blue"
-                                       Grid.Column="0"
-                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
-
-
-            </controls:TouchContentView>
+            <Grid
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
 
-            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
-                                       BackgroundColor="Green"
-                                       Grid.Column="1"
-                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+                <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+                                           
+                                           Grid.Column="0"
+                                           OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+                    <BoxView CornerRadius="10" Color="Red"></BoxView>
+
+                </controls:TouchContentView>
 
 
-            </controls:TouchContentView>
+                <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+    
+                                           Grid.Column="1"
+                                           OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+                    <Image Source="./dotnet_bot.svg"></Image>
+
+                </controls:TouchContentView>
 
 
-            <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
-                                       BackgroundColor="Yellow"
-                                       Grid.Column="2"
-                                       OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+                <controls:TouchContentView Style="{StaticResource HoldDownButtonStyle}"
+        
+                                           Grid.Column="2"
+                                           OnTouchActionInvoked="TouchContentView_OnTouchActionInvoked">
+                    <Label Text="假装我是一个按钮"></Label>
 
-
-            </controls:TouchContentView>
+                </controls:TouchContentView>
+            </Grid>
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding Source={x:Reference MainContentPage}, Path=DebugMessages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" TextColor="{StaticResource PhoneForegroundBrush}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-
     </ContentPage.Content>
 
 </ContentPage>
